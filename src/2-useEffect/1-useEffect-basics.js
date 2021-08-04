@@ -2,24 +2,31 @@ import { useState, useEffect } from "react"
 
 const UseEffectBasics = ()=>{
 
-    const [value,setvalue] = useState(0)
+    const [size, setSize] = useState(window.innerWidth)
+ console.log(size)
+    const checkSize =()=>{
+        setSize(window.innerWidth)
+    }
      useEffect (()=>{
+        
+     window.addEventListener('resize',checkSize)
+     return (
+         ()=>{
+             
+         window.removeEventListener('resize',checkSize)
+         }
+     )
+      
 
-      console.log('Inside useEffect')
-      if(value>2){
-          document.title = `newMessage ${value}`
-      }
+    })
 
-    },[value])
-
-    console.log("outside useEffect")
+    
 
 
 return(
     <>
-    <h2>value</h2>
-    <h2>{value}</h2>
-    <button className="btn" onClick={()=> setvalue(value+1)}>Change value</button>
+    <h2>window</h2>
+    <h2>{size}px</h2>
     </>
 )
 
