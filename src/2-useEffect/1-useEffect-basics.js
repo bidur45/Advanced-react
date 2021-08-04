@@ -4,7 +4,11 @@ const UseEffectBasics = ()=>{
 
     const [value,setvalue] = useState(0)
      useEffect (()=>{
+
       console.log('Inside useEffect')
+      if(value>2){
+          document.title = `newMessage ${value}`
+      }
 
     }
     )
