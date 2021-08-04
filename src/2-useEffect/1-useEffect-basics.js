@@ -10,8 +10,7 @@ const UseEffectBasics = ()=>{
           document.title = `newMessage ${value}`
       }
 
-    }
-    )
+    },[value])
 
     console.log("outside useEffect")
 
