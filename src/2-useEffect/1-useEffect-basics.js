@@ -1,34 +1,40 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
-const UseEffectBasics = ()=>{
+const UseEffectBasics = () => {
+  const url = 'https://api.github.com/users'
 
-    const [size, setSize] = useState(window.innerWidth)
- console.log(size)
-    const checkSize =()=>{
-        setSize(window.innerWidth)
-    }
-     useEffect (()=>{
-        
-     window.addEventListener('resize',checkSize)
-     return (
-         ()=>{
-             
-         window.removeEventListener('resize',checkSize)
-         }
-     )
-      
+  const [users, setUsers] = useState([])
 
-    })
+  const getUsers = async () => {
+    const response = await fetch(url)
+    const users = await response.json()
+    console.log(users)
+    setUsers(users)
+  }
 
-    
+  useEffect(() => {
+    getUsers()
+  },[] )
 
-
-return(
+  return (
     <>
-    <h2>window</h2>
-    <h2>{size}px</h2>
+      <h3>Github Users</h3>
+      <ul className='users'>
+        {users.map((user) => {
+          const { id, login, html_url, avatar_url } = user
+          return (
+            <li key={id}>
+              <img src={avatar_url} alt={login} />
+              <div>
+                <h4>{login}</h4>
+                <a href={html_url}>Github Profile</a>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
     </>
-)
-
+  )
 }
+
 export default UseEffectBasics
