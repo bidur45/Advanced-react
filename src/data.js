@@ -1,8 +1,8 @@
 // export const data = [
 //     { id:1, name:'Sandesh dahal'},
-//     {id:2, name: 'Susmita dhungana'},
+//     {id:2, name: 'laxman parajuli'},
 //     { id:3, name: 'Bidur parajuli'},
-//     {id:4, name: "Archana dhungana"}
+//     {id:4, name: "sudeep shrestha"}
 // ]
 export const data = [
     { id: 1, name: 'Adhish Khadka' },
@@ -17,3 +17,4 @@ export const data = [
     { id: 10, name: 'Santosh Nepal' },
     { id: 11, name: 'Sujan chhengutala' },
   ]
+
