@@ -10,8 +10,11 @@ const Products = ({image, name, price })=>{
         <img src={url || defaultImage } alt="name"></img>
         <p>{price}</p>
         </div>
+        
     )
 }
+
+
 
 Products.propTypes = {
     image: PropTypes.object.isRequired,
@@ -22,7 +25,7 @@ Products.propTypes = {
   Products.defaultProps = {
     name: 'my default name',
     price: 15,
-    image: defaultImage,
+    image: {defaultImage},
   };
 
 export default Products;

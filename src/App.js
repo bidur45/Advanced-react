@@ -8,7 +8,9 @@
 // import State from './5-proop drilling/1-proopDrilling'
 // import State from './6-contextAPI/1-context-API'
 // import State from './7-custom hook/1-fetch-example'
-import State  from "./8-prop types/1-index";
+// import State  from "./8-prop types/1-index";
+import State  from "./9-react router";
+
 
 
 

@@ -4,14 +4,16 @@ import { useState,useEffect } from "react"
 export const useFetch = (url)=>{
     const [loading,setLoading] = useState(true)
     const [products, setproduct] = useState([])
-   const getProducts = async()=>{
-       const response = await fetch(url)
-       const products = await response.json()
-       setproduct(products);
-       setLoading(false);
-   } 
-
+  
+  
     useEffect(() => {
+        const getProducts = async()=>{
+            const response = await fetch(url)
+            const products = await response.json()
+            setproduct(products);
+            setLoading(false);
+        } 
+     
         getProducts()
        },[url])
 
