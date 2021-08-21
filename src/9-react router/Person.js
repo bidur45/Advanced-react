@@ -7,7 +7,6 @@ const Person = () => {
   const { id } = useParams();
   useEffect(() => {
     const newPerson = data.find((person) => person.id === parseInt(id));
-    console.log(newPerson)  
     setName(newPerson.name)
   }, [setName, id]);
   return (

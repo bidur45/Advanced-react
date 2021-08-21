@@ -3,8 +3,7 @@ import {data} from '../data'
 import  {Link} from 'react-router-dom'
 
 const People = () => {
-    const [people,setpeople]=useState(data)
-    console.log(people)
+    const [people]=useState(data)
     return (
        <>
        {people.map((person)=>{
