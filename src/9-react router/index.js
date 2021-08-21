@@ -1,5 +1,5 @@
  
- import { BrowserRouter, Route, Link } from "react-router-dom";
+ import { BrowserRouter as Router, Route,Switch} from "react-router-dom";
  
  import Home from"./Home"
  import About from"./About"
@@ -12,20 +12,27 @@
 
  const ReactRouter =()=> {
 return (
-    <router>
-        <route  path='/'>
+    <Router>
+        <NavBar/>
+        <Switch>
+        <Route exact path='/'>
         <Home/>
-        </route>
-        <route path='/'>
+        </Route>
+        <Route path='/about'>
         <About/>
-        </route>
-        <route path='/'>
+        </Route>
+        <Route path='/people'>
         <People/>
-        </route>
-        <route path='/'>
-        <Person/>
-        </route>
-    </router>
-)
+        </Route>
+        <Route path='/person/:id' children = {<Person/>}>
+        
+        </Route>
+        <Route path='/*'>
+        <Error/>
+        </Route>
+        </Switch>
+        
+    </Router>
+    )
  }
  export default ReactRouter
