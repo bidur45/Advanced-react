@@ -4,7 +4,7 @@ import {useFetch} from '../7-custom hook/2-useFetch'
 const url = 'https://reactcourseapi.gorakhjoshi.com/';
 
 const Index = () => {
-   const  {products}= useFetch(url)
+    const { products }= useFetch(url)
     const [count, setCount] = useState(0)
     const [cart, setCart]=useState(0)
     console.log('Index component is running')

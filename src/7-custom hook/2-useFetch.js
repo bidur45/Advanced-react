@@ -17,8 +17,8 @@ export const useFetch = (url)=>{
         getProducts()
        },[url])
 
-     return   {
-         loading, products
-     }
+    return {
+        loading, products
+    }
 
 }

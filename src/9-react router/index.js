@@ -18,14 +18,14 @@ return (
         <Route exact path='/'>
         <Home/>
         </Route>
-        <Route path='/about'>
+        <Route  path='/about'>
         <About/>
         </Route>
         <Route path='/people'>
         <People/>
         </Route>
-        <Route path='/person/:id' children = {<Person/>}>
-        
+        <Route path='/person/:id'>
+        <Person/>
         </Route>
         <Route path='/*'>
         <Error/>
